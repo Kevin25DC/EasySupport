@@ -13,23 +13,23 @@
     <a href="{% url 'home' %}"><img src="{% static '/img/back.png' %}" alt="Home" width="30px" id="back"></a>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form>
+            <form action="/Register/" method="post"> {% csrf_token %}
                 <h1>Crear una cuenta</h1>
                 <span>o utiliza tu correo electrónico para registrarte</span>
                 <br>
-                <input type="text" placeholder="Nombre">
-                <input type="email" placeholder="Correo electronico">
-                <input type="password" placeholder="Contraseña">
+                <input type="text" placeholder="Nombre" name="Name">
+                <input type="email" placeholder="Correo electronico" name="Email">
+                <input type="password" placeholder="Contraseña" name="password">
                 <button>Registrate</button>
             </form>
         </div>
         <div class="form-container sign-in">
-            <form>
+            <form action="/login/"> {% csrf_token %}
                 <h1>Iniciar sesión</h1>
                 <span>utiliza tu contraseña de correo electrónico</span>
                 <br>
-                <input type="email" placeholder="Correo electronico">
-                <input type="password" placeholder="Contraseña">
+                <input type="email" placeholder="Correo electronico" name="Name">
+                <input type="password" placeholder="Contraseña" name="password">
                 <a href="#">¿Olvidaste tu contraseña?</a>
                 <button>Iniciar sesión</button>
             </form>

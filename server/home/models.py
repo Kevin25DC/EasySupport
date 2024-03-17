@@ -37,6 +37,7 @@ class User(models.Model):
     citizenshipCard = models.IntegerField(verbose_name = "Cedula de ciudadania")
     Email = models.EmailField(null=True)
     Phone = models.CharField(max_length=15)
+    password = models.CharField(max_length=128)
     roles = models.ForeignKey(Roles, blank=True, null=True, on_delete=models.CASCADE)
     
     def __str__(self) -> str:
