@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
-class TemplateHome():
-    def Home(request):
-        return render(request, 'Home.html')
+def Home(request):
+    return render(request,'Home.html')
+
+def login_view(request):
+    return render(request,'Login.html')
