@@ -34,9 +34,10 @@ class User(models.Model):
     Username = models.TextField(max_length =250) 
     Name = models.CharField(max_length= 200, verbose_name="Nombre")
     lastName = models.CharField(max_length= 200, verbose_name="Apellido")
-    citizenshipCard = models.IntegerField(verbose_name = "Cedula de ciudadania")
+    citizenshipCard = models.IntegerField(verbose_name = "Cedula de ciudadania", default=0)
     Email = models.EmailField(null=True)
-    Phone = models.CharField(max_length=15)
+    Phone = models.CharField(max_length=15, default=0)
+    password = models.CharField(max_length=128)
     roles = models.ForeignKey(Roles, blank=True, null=True, on_delete=models.CASCADE)
     
     def __str__(self) -> str:
