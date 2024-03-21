@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href='{% static "/css/login.css" %}'>
     <link rel="icon" href='{% static "img/ayudar.png" %}' type="image/x-icon">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Iniciar Sesion</title>
 </head>
 <body>
@@ -18,9 +19,22 @@
                 <span>o utiliza tu correo electrónico para registrarte</span>
                 <br>
                 <input type="text" placeholder="Nombre" name="Name">
+                <input type="text" placeholder="Apellido" name="lastName">
                 <input type="email" placeholder="Correo electronico" name="Email">
                 <input type="password" placeholder="Contraseña" name="password">
+                {{ registerModel.as_p }}
                 <button>Registrate</button>
+                {% if invalid_form %}
+                <script>
+                    swal("Error", "¡Por favor, corrija los campos inválidos!", "error");
+                </script>
+                {% endif %}
+
+                {% if user_exists %}
+                <script>
+                    swal("Error", "¡El usuario ya existe!", "error");
+                </script>
+                {% endif %}
             </form>
         </div>
         <div class="form-container sign-in">
