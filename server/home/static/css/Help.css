@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+
+.Titulo{
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #bcb7b7; 
+}
+
+.navbar-brand {
+  position: relative;
+  left: 250px;
+}
+
+.navbar-nav {
+  margin: auto;
+}
+
+
+.btn-outline-primary {
+  margin-right: 10px; 
+  
+}
+
+.btn-outline-primary:hover {
+  background-image: none; 
+  background-color: #0287E3; 
+  background-image: linear-gradient(to right, #0287E3, #02D0F4); /* Gradiente */
+  color: white; 
+}
+
+
